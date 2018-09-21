@@ -16,3 +16,7 @@ RUN apt-get update \
 RUN apt-get update \
     && apt-get -y install git \
     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+
+# SET FILE PERMISSION -----------------------------------------------------------------------------------
+RUN chown -R :www-data /var/www/html \
+ && chmod -R ug+rwx /var/www/html/storage /var/www/html/bootstrap/cache
