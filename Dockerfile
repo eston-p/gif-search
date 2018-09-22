@@ -1,4 +1,5 @@
 FROM phpdockerio/php71-fpm:latest
+WORKDIR "/var/www/html"
 
 # Fix debconf warnings upon build
 ARG DEBIAN_FRONTEND=noninteractive
