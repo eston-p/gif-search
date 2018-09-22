@@ -6,7 +6,7 @@ services:
 
     mysql:
       build: phpdocker/mysql
-      container_name: docker-mysql
+      container_name: mysql
       working_dir: /var/www/html
       volumes:
       - ./data/mysql:/var/lib/mysql
@@ -21,7 +21,7 @@ services:
 
     webserver:
       image: nginx:alpine
-      container_name: docker-webserver
+      container_name: webserver
       working_dir: /var/www/html
       volumes:
           - ./:/var/www/html
@@ -31,7 +31,7 @@ services:
 
     php-fpm:
       build: phpdocker/php-fpm
-      container_name: docker-php-fpm
+      container_name: php-fpm
       working_dir: /var/www/html
       volumes:
         - ./:/var/www/html
