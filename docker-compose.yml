@@ -30,7 +30,9 @@ services:
        - "8001:80"
 
     php-fpm:
-      build: phpdocker/php-fpm
+      build:
+        context: .
+        dockerfile: Dockerfile
       container_name: php-fpm
       working_dir: /var/www/html
       volumes:
