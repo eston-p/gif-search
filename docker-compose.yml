@@ -16,7 +16,6 @@ services:
         - MYSQL_DATABASE=homestead
         - MYSQL_USER=homestead
         - MYSQL_PASSWORD=secret
-      user: ${HOST_UID_GID}
       ports:
         - "3306:3306"
 

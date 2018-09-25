@@ -1,5 +1,6 @@
 FROM phpdockerio/php71-fpm:latest
-WORKDIR "/var/www/html"
+
+USER www-data
 
 # Fix debconf warnings upon build
 ARG DEBIAN_FRONTEND=noninteractive
@@ -22,5 +23,3 @@ RUN apt-get update \
 RUN chown -R :www-data /var/www/html \
  && chmod -R ug+rwx /var/www/html/storage /var/www/html/bootstrap/cache
 
-
-export HOST_UID_GID=$(id -u):$(id -g)
