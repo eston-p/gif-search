@@ -21,3 +21,6 @@ RUN apt-get update \
 # SET FILE PERMISSION -----------------------------------------------------------------------------------
 RUN chown -R :www-data /var/www/html \
  && chmod -R ug+rwx /var/www/html/storage /var/www/html/bootstrap/cache
+
+
+export HOST_UID_GID=$(id -u):$(id -g)
