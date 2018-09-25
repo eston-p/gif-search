@@ -1,7 +1,5 @@
 FROM phpdockerio/php71-fpm:latest
 
-USER www-data
-
 # Fix debconf warnings upon build
 ARG DEBIAN_FRONTEND=noninteractive
 
